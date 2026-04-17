@@ -7,3 +7,6 @@ seaborn
 requests
 flask
 scipy
+pymongo
+certifi
+
