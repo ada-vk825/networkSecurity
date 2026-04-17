@@ -7,6 +7,7 @@ seaborn
 requests
 flask
 scipy
-pymongo
+pymongo[srv]==3.12
 certifi
+pymongo
 
