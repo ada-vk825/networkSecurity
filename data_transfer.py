@@ -24,7 +24,7 @@ class NetworkDataExtract:
             logging.error(f"Error occurred in NetworkDataExtract class: {e}")
             raise CustomException(e, sys)
         
-    def csv_to_json(self, file_path: str) -> list:
+    def csv_to_dict(self, file_path: str) -> list:
         '''Converts a CSV file to JSON format.
         Args: file_path (str): The path to the CSV file to be converted.
         Returns: list: A list of dictionaries representing the JSON data.
@@ -39,8 +39,8 @@ class NetworkDataExtract:
         except Exception as e:
             logging.error(f"Error occurred while converting CSV to JSON: {e}")
             raise CustomException(e, sys)
-        
-    
+
+
     def insert_to_mongodb(self, records, database, collection):
         '''Inserts a list of records into a MongoDB collection.
         Args: records (list): A list of dictionaries representing the data to be inserted.
@@ -70,8 +70,7 @@ if __name__ == "__main__":
     database = "NetworkSecurityDB"
     collection = "PhishingData"
     network_obj = NetworkDataExtract()
-    records = network_obj.csv_to_json(file_path)
-    print(records[:5])
+    records = network_obj.csv_to_dict(file_path)
     inserted_count = network_obj.insert_to_mongodb(records, database, collection)
     print(f"Total records inserted: {inserted_count}")
     logging.info(f"Total records inserted: {inserted_count}")
