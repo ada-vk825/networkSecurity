@@ -1,3 +1,0 @@
-2026-04-17 22:11:22,000 - INFO - 36 root - Successfully converted Network_Data/phisingData.csv to JSON format.
-2026-04-17 22:11:31,047 - INFO - 60 root - Successfully inserted records into MongoDB collection: PhishingData in database: NetworkSecurityDB.
-2026-04-17 22:11:31,048 - INFO - 77 root - Total records inserted: 11055
